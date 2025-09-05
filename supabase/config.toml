@@ -80,3 +80,19 @@ vector_port = 54328
 gcp_project_id = ""
 gcp_project_number = ""
 gcp_jwt_path = "supabase/gcloud.json"
+
+[edge_runtime]
+enabled = true
+# Configure one of the supported request policies: `oneshot`, `per_worker`.
+# Use `oneshot` for hot reload, or `per_worker` for load testing.
+policy = "oneshot"
+# Port to attach the Chrome inspector for debugging edge functions.
+inspector_port = 8083
+# The Deno major version to use.
+deno_version = 1
+
+# [edge_runtime.secrets]
+# secret_key = "env(SECRET_VALUE)"
+
+# Edge Functions Configuration
+[functions.vector-search]

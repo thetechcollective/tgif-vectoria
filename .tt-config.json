@@ -1,0 +1,22 @@
+{
+  "project": {
+    "owner": "thetechcollective",
+    "number": 12
+  },
+  "workon": {
+    "status": "In Progress"
+  },
+  "deliver": {
+    "status": "Delivery Initiated",
+    "target_branch": "main"
+  },
+  "ready": {
+    "branch_prefix": "ready/",
+    "merge_target": "main"
+  },
+  "workflow": {
+    "main_branch": "main",
+    "production_branches": ["qa", "prod"],
+    "auto_deploy": true
+  }
+}

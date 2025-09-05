@@ -1,0 +1,28 @@
+{
+  "name": "Supabase Backend",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  // "runArgs": ["--platform=linux/amd64"],
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.tabSize": 2
+      },
+      "extensions": [
+        "vscode.typescript-language-features",
+        "denoland.vscode-deno"
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:latest": {}, // Install Docker CLI
+    "ghcr.io/devcontainers-extra/features/supabase-cli:latest": {}, // Install Supabase CLI
+    "ghcr.io/devcontainers/features/github-cli:1": {} // Install GitHub CLI
+  },
+  "initializeCommand": ".devcontainer/initializeCommand.sh",
+  "postCreateCommand": [
+    "bash",
+    "-c",
+    "curl -fsSL https://deno.land/install.sh | sh && echo 'export DENO_INSTALL=\"$HOME/.deno\"' >> ~/.bashrc && echo 'export PATH=\"$DENO_INSTALL/bin:$PATH\"' >> ~/.bashrc && .devcontainer/postCreateCommand.sh"
+  ]
+}
